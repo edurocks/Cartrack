@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.tekever.ui.main.LoginFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_usersDetailFragment"
+            app:destination="@id/usersDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/usersDetailFragment"
+        android:name="com.example.tekever.ui.main.UsersDetailFragment"
+        android:label="usersDetailFragment" />
+</navigation>
