@@ -23,6 +23,9 @@
       <com.google.android.material.textfield.TextInputEditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:imeOptions="actionNext"
+          android:nextFocusDown="@+id/password"
+          android:inputType="text"
           android:hint="@string/username" />
 
    </com.google.android.material.textfield.TextInputLayout>
@@ -34,6 +37,7 @@
        android:layout_marginStart="30dp"
        android:layout_marginTop="40dp"
        android:layout_marginEnd="39dp"
+       android:imeOptions="actionNext"
        app:errorEnabled="true"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +46,9 @@
       <com.google.android.material.textfield.TextInputEditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:imeOptions="actionNext"
+          android:nextFocusDown="@+id/country"
+          android:inputType="textPassword"
           android:hint="@string/password" />
 
    </com.google.android.material.textfield.TextInputLayout>
@@ -62,6 +69,9 @@
       <AutoCompleteTextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:imeOptions="actionDone"
+          android:nextFocusDown="@null"
+          android:inputType="text"
           android:hint="@string/country" />
 
    </com.google.android.material.textfield.TextInputLayout>

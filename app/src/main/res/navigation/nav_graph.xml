@@ -7,16 +7,25 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.tekever.ui.main.LoginFragment"
+        android:name="com.example.cartrack.ui.main.LoginFragment"
         android:label="main_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_usersDetailFragment"
-            app:destination="@id/usersDetailFragment" />
+            android:id="@+id/action_loginFragment_to_usersListFragment"
+            app:destination="@id/usersListFragment" />
     </fragment>
 
     <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.example.cartrack.ui.main.users.UsersListFragment"
+        android:label="usersDelFragment" >
+        <action
+            android:id="@+id/action_usersListFragment_to_usersDetailFragment"
+            app:destination="@id/usersDetailFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/usersDetailFragment"
-        android:name="com.example.tekever.ui.main.UsersDetailFragment"
-        android:label="usersDetailFragment" />
+        android:name="com.example.cartrack.ui.main.users.UsersDetailFragment"
+        android:label="fragment_users_detail"
+        tools:layout="@layout/fragment_users_detail" />
 </navigation>
