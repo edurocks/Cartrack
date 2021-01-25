@@ -26,7 +26,8 @@ import org.mockito.junit.MockitoJUnitRunner
  */
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class ExampleUnitTest {
+
+class NetworkUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
@@ -47,6 +48,7 @@ class ExampleUnitTest {
     @Mock
     private lateinit var apiUsersObserver: Observer<Resource<List<UsersResponse>>>
 
+
     @Before
     fun setUp() {}
 
@@ -62,21 +64,6 @@ class ExampleUnitTest {
         }
     }
 
-    @Test
-    fun givenServerResponseError_whenFetch_shouldReturnError() {
-        testCoroutineRule.runBlockingTest {
-            val viewModel = UsersViewModel(userRepository, loginRepository)
-            viewModel.getUsers()
-            viewModel.mUsersResponse.observeForever(apiUsersObserver)
-            verify(userRepository).getUsers()
-            verify(apiUsersObserver).onChanged(
-                Resource.error(null, "errorMessage")
-            )
-            viewModel.mUsersResponse.removeObserver(apiUsersObserver)
-        }
-    }
-
     @After
     fun tearDown() {}
-
 }

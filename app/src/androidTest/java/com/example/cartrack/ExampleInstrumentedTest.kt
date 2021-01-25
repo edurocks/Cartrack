@@ -1,21 +1,15 @@
 package com.example.cartrack
 
 import android.widget.EditText
-import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.navigation.Navigation
-import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ActivityScenario
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.cartrack.ui.main.users.UsersListFragment
 import org.hamcrest.core.AllOf.allOf
 import org.junit.Assert.*
 import org.junit.Test
@@ -65,18 +59,6 @@ class ExampleInstrumentedTest {
             , ViewActions.closeSoftKeyboard())
 
         onView(withId(R.id.login)).perform(click())
-
-        val navController = TestNavHostController(
-            ApplicationProvider.getApplicationContext())
-        navController.setGraph(R.navigation.nav_graph)
-
-        // Create a graphical FragmentScenario for the TitleScreen
-        val titleScenario = launchFragmentInContainer<UsersListFragment>()
-
-        // Set the NavController property on the fragment
-        titleScenario.onFragment { fragment ->
-            Navigation.setViewNavController(fragment.requireView(), navController)
-        }
 
     }
 }
